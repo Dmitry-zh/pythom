@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  pithomapka:
+    build: ./pythomapka
+    container_name: pythomapka
+    restart: always
+    environment:
+      - APP_NAME=VLADSOSI
+    expose:
+      - 8080
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+    - "80:80"
